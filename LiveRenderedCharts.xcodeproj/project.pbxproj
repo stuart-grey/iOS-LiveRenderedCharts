@@ -13,6 +13,9 @@
 		22AD114519AEAA6900D30AF6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22AD114419AEAA6900D30AF6 /* Images.xcassets */; };
 		22AD115119AEAA6A00D30AF6 /* LiveRenderedChartsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD115019AEAA6A00D30AF6 /* LiveRenderedChartsTests.swift */; };
 		22AD118419AEACAA00D30AF6 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 22AD118319AEACAA00D30AF6 /* ShinobiCharts.framework */; };
+		22AD118819AEAD9400D30AF6 /* RenderedChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD118719AEAD9400D30AF6 /* RenderedChart.swift */; };
+		22AD118B19AEAE5700D30AF6 /* SampleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22AD118A19AEAE5700D30AF6 /* SampleDataSource.swift */; };
+		22CE0C3119AEC97500235B49 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 22CE0C3019AEC97500235B49 /* libc++.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,10 @@
 		22AD114F19AEAA6A00D30AF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22AD115019AEAA6A00D30AF6 /* LiveRenderedChartsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveRenderedChartsTests.swift; sourceTree = "<group>"; };
 		22AD118319AEACAA00D30AF6 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
+		22AD118619AEAD2400D30AF6 /* LiveRenderedCharts-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LiveRenderedCharts-Bridging-Header.h"; sourceTree = "<group>"; };
+		22AD118719AEAD9400D30AF6 /* RenderedChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderedChart.swift; sourceTree = "<group>"; };
+		22AD118A19AEAE5700D30AF6 /* SampleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleDataSource.swift; sourceTree = "<group>"; };
+		22CE0C3019AEC97500235B49 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22CE0C3119AEC97500235B49 /* libc++.dylib in Frameworks */,
 				22AD118419AEACAA00D30AF6 /* ShinobiCharts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,6 +100,7 @@
 		22AD113A19AEAA6900D30AF6 /* LiveRenderedCharts */ = {
 			isa = PBXGroup;
 			children = (
+				22AD118919AEAE0E00D30AF6 /* ChartClasses */,
 				22AD113D19AEAA6900D30AF6 /* AppDelegate.swift */,
 				22AD113F19AEAA6900D30AF6 /* ViewController.swift */,
 				22AD114119AEAA6900D30AF6 /* Main.storyboard */,
@@ -104,6 +113,7 @@
 		22AD113B19AEAA6900D30AF6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				22AD118619AEAD2400D30AF6 /* LiveRenderedCharts-Bridging-Header.h */,
 				22AD113C19AEAA6900D30AF6 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -129,9 +139,19 @@
 		22AD118519AEACAF00D30AF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				22CE0C3019AEC97500235B49 /* libc++.dylib */,
 				22AD118319AEACAA00D30AF6 /* ShinobiCharts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		22AD118919AEAE0E00D30AF6 /* ChartClasses */ = {
+			isa = PBXGroup;
+			children = (
+				22AD118719AEAD9400D30AF6 /* RenderedChart.swift */,
+				22AD118A19AEAE5700D30AF6 /* SampleDataSource.swift */,
+			);
+			name = ChartClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				22AD114019AEAA6900D30AF6 /* ViewController.swift in Sources */,
+				22AD118819AEAD9400D30AF6 /* RenderedChart.swift in Sources */,
+				22AD118B19AEAE5700D30AF6 /* SampleDataSource.swift in Sources */,
 				22AD113E19AEAA6900D30AF6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +382,7 @@
 				INFOPLIST_FILE = LiveRenderedCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LiveRenderedCharts/LiveRenderedCharts-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -375,6 +398,7 @@
 				INFOPLIST_FILE = LiveRenderedCharts/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/LiveRenderedCharts/LiveRenderedCharts-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -431,6 +455,7 @@
 				22AD115619AEAA6A00D30AF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22AD115719AEAA6A00D30AF6 /* Build configuration list for PBXNativeTarget "LiveRenderedChartsTests" */ = {
 			isa = XCConfigurationList;
@@ -439,6 +464,7 @@
 				22AD115919AEAA6A00D30AF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
